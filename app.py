@@ -2,15 +2,14 @@ import time
 import schedule
 from schedule import repeat
 from writer import writer
-from datetime import date, timedelta
 
 
-@repeat(schedule.every().day.at('10:54'))
+@repeat(schedule.every().day.at('00:30'))
 def write_metrics():
     writer('korsakov', 'day')
 
 
-@repeat(schedule.every().day.at('10:55'))
+@repeat(schedule.every().day.at('05:50'))
 def write_metrics():
     writer('zelen', 'day')
 
@@ -75,7 +74,7 @@ def write_metrics():
     writer('msk-sch', 'week')
 
 
-@repeat(schedule.every().day.at('12:41'))
+@repeat(schedule.every().monday.at('12:41'))
 def write_metrics():
     writer('vkz', 'week')
 
@@ -90,7 +89,7 @@ def write_metrics():
     writer('sergpas', 'week')
 
 
-@repeat(schedule.every().day.at('14:22'))
+@repeat(schedule.every().monday.at('14:22'))
 def write_metrics():
     writer('zelen', 'week')
 
@@ -108,6 +107,11 @@ def write_metrics():
 @repeat(schedule.every().thursday.at('00:35'))
 def write_metrics():
     writer('korsakov', 'week2')
+
+
+@repeat(schedule.every().thursday.at('01:40'))
+def write_metrics():
+    writer('zelen', 'week2')
 
 
 @repeat(schedule.every().thursday.at('12:49'))
@@ -135,49 +139,49 @@ def write_metrics():
     writer('sergpas', 'week2')
 
 
-@repeat(schedule.every().day.at('16:55'))
-def write_metrics():
-    writer('omsk', 'month')
-
-
-@repeat(schedule.every().day.at('16:57'))
-def write_metrics():
-    writer('veris', 'month')
-
-
-@repeat(schedule.every().day.at('13:04'))
-def write_metrics():
-    writer('korsakov', 'month')
-
-
-@repeat(schedule.every().day.at('17:10'))
-def write_metrics():
-    writer('vkus', 'month')
-
-
-@repeat(schedule.every().day.at('17:02'))
-def write_metrics():
-    writer('msk-sch', 'month')
-
-
-@repeat(schedule.every().day.at('17:04'))
-def write_metrics():
-    writer('vkz', 'month')
-
-
-@repeat(schedule.every().day.at('17:05'))
-def write_metrics():
-    writer('south', 'month')
-
-
-@repeat(schedule.every().day.at('17:07'))
-def write_metrics():
-    writer('sergpas', 'month')
-
-
-@repeat(schedule.every().day.at('13:16'))
-def write_metrics():
-    writer('zelen', 'month')
+# @repeat(schedule.every().day.at('16:55'))
+# def write_metrics():
+#     writer('omsk', 'month')
+#
+#
+# @repeat(schedule.every().day.at('16:57'))
+# def write_metrics():
+#     writer('veris', 'month')
+#
+#
+# @repeat(schedule.every().day.at('13:04'))
+# def write_metrics():
+#     writer('korsakov', 'month')
+#
+#
+# @repeat(schedule.every().day.at('17:10'))
+# def write_metrics():
+#     writer('vkus', 'month')
+#
+#
+# @repeat(schedule.every().day.at('17:02'))
+# def write_metrics():
+#     writer('msk-sch', 'month')
+#
+#
+# @repeat(schedule.every().day.at('17:04'))
+# def write_metrics():
+#     writer('vkz', 'month')
+#
+#
+# @repeat(schedule.every().day.at('17:05'))
+# def write_metrics():
+#     writer('south', 'month')
+#
+#
+# @repeat(schedule.every().day.at('17:07'))
+# def write_metrics():
+#     writer('sergpas', 'month')
+#
+#
+# @repeat(schedule.every().day.at('13:16'))
+# def write_metrics():
+#     writer('zelen', 'month')
 
 
 if __name__ == '__main__':

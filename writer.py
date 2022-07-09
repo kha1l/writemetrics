@@ -13,5 +13,4 @@ def writer(group, tps):
         metrics = df['NameMetrics'].tolist()
         columns = ', '.join(metrics)
         auth.workbook(columns, user[0], user[1])
-        print(user[0])
         time.sleep(5)
